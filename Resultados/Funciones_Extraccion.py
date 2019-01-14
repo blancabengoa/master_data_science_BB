@@ -23,7 +23,7 @@ def solicita_datos_general(fecha_ini,fecha_fin,ind):
     data=json.loads(r.content)
     df_data=pd.DataFrame(data['indicator']['values'])
     df=pd.DataFrame() 
-     df['datetime'] = pd.to_datetime([f[:10] + ' ' + f[11:13] + ':00:00' 
+    df['datetime'] = pd.to_datetime([f[:10] + ' ' + f[11:13] + ':00:00' 
                                      for f in df_data['datetime']],yearfirst=True,format='%Y-%m-%d %H:%M:%S')
     df['value']=df_data['value']
     
@@ -87,10 +87,3 @@ def WD(elem):
         fecha=datetime.strptime(elem,'%Y-%m-%d')
         WD=fecha.weekday()+1
     return WD
-
-### Cálculo columnas asociadas con tiempo
-
-def TEMP(df):
-    df['PERIODO']=df['datetime'].dt.hour+1
-    df['MES']=df['datetime'].dt.month
-    df['WD']=pd.Series(df['datetime'].map(WD)).astype(int)
