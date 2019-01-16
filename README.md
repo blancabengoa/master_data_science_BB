@@ -100,7 +100,7 @@ d)	**Modelo_XGBoost_FSelect:** Seleccionado el modelo XGBoost (con las caracter�
 
 Adicionalmente, en esta carpeta se encuentra el notebook **Extra_Modelo_XGBoost_Hiperparam.ipynb**: Este notebook es un comienzo de la línea de trabajo a seguir, intentando mejorar el score de mi modelo. Sin haber realizado un análisis en profundidad de los resultados, el primer ajuste de 2 de sus parámetros **incrementa el accuracy al 76%**.
 
-IV. Resultado
+IV. Resultado:
 
 Presentación y análisis de lo conseguido. Realización del frontend para su puesta en producción.
 
