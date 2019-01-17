@@ -143,7 +143,7 @@ Por último, además de las referencias nombradas en los propios notebooks, dest
 *"Hands-On Machine Learning with Scikit-Learn & TensorFlow"*
 
 
-**FE DE ERRATAS**
+## FE DE ERRATAS
 
 Se hace constar que en el Trabajo Final de Master "Spread entre mercados en el Mercado Eléctrico español" publicado en este repositorio, se han advertido los siguientes errores:
 
@@ -153,11 +153,11 @@ Se hace constar que en el Trabajo Final de Master "Spread entre mercados en el M
 
 3. En la sección **Resultados**, notebook **Comparativa_modelos.ipynb**, en el apartado Resultados, se corrige la línea de código:
 
-*print('SELECCIONADO: %.2f' %precision_score(y_test4,modelo4.predict(X_test4)) + '/n')*
+  *print('SELECCIONADO: %.2f' %precision_score(y_test4,modelo4.predict(X_test4)) + '/n')*
 
- por 
+  por 
  
-*print('SELECCIONADO: %.2f' %precision_score(y_test4,modelo4.predict(X_test4)) + '\n')*
+  *print('SELECCIONADO: %.2f' %precision_score(y_test4,modelo4.predict(X_test4)) + '\n')*
 
 4. En la sección **Resultados**, notebook **XGBOOST**, en el apartado Análisis probabilidades: predict_proba(), el comentario *Hay un 41% de las veces que me quedo de brazos cruzados y hubiese acertado ¿cuántas veces ocurre esto cuando predict_proba < 65%?* se sustituye por *Hay un 41% de las veces que me quedo de brazos cruzados y hubiese acertado ¿cuántas veces ocurre esto cuando predict_proba < 60%?*
 
