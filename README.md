@@ -7,7 +7,7 @@ Este trabajo final de master está ambientado en el Mercado eléctrico español 
 
 http://www.omie.es/inicio/mercados-y-productos/conoces-nuestro-mercado-de-electricidad.
 
-El objetivo de este problema es intentar predecir, previa a la celebración de la subasta diaria (a partir de ahora MD) si el precio del mercado de ajuste intradiario (a partir de ahora MIi, siendo i la subasta intradiaria correspondiente) será inferior o superior al precio del MD, para gestionar una parte de la compra de los clientes en un mercado u otro y conseguir el beneficio del spread entre ambos mercados. 
+El objetivo es intentar predecir, previa a la celebración de la subasta diaria (a partir de ahora MD) si el precio del mercado de ajuste intradiario (a partir de ahora MIi, siendo i la subasta intradiaria correspondiente) será inferior o superior al precio del MD, para gestionar una parte de la compra de los clientes en un mercado u otro y conseguir el beneficio del spread entre ambos mercados. 
 
 Los contratos suelen estar referenciados al precio del MD, por tanto, el solo acudir al MD no genera pérdida (tampoco beneficio).
 
@@ -57,8 +57,8 @@ La realización de este TFM se divide en 4 fases, coincidentes con el correspond
 
 I.	Extracción datos:
 
-Para construir el dataset final (*data_processed/data_processed.csv*), se han utilizado los notebooks que se encuentran en la carpeta Extracción de datos.
-Los datos se han conseguido de 3 fuentes distintas consiguiendo 3 conjuntos de datos (almacenados en formato .csv en la carpeta data). Por ello, los notebooks a ejecutar para su extracción son (sin un orden prioritario):
+Para construir el dataset final (*data_processed/data_processed.csv*), se han utilizado los notebooks que se encuentran en la carpeta *Extraccion_datos*.
+Los datos se han conseguido de 3 fuentes distintas consiguiendo 3 conjuntos de datos (almacenados en formato *.csv* en la carpeta *data*). Por ello, los notebooks a ejecutar para su extracción son (sin un orden prioritario):
 * Carbón_D-1.ipynb -> genera carbón_dia_ant.csv
 * Descarga_esios.ipynb -> genera datos_esios.csv
 * Embalses.ipynb -> genera embalses_dia.csv
@@ -100,7 +100,7 @@ d)	**Modelo_XGBoost_FSelect:** Seleccionado el modelo XGBoost (con las caracter�
 
 Adicionalmente, en esta carpeta se encuentra el notebook **Extra_Modelo_XGBoost_Hiperparam.ipynb**: Este notebook es un comienzo de la línea de trabajo a seguir, intentando mejorar el score de mi modelo. Sin haber realizado un análisis en profundidad de los resultados, el primer ajuste de 2 de sus parámetros **incrementa el accuracy al 76%**.
 
-IV. Resultado:
+IV. Resultados:
 
 Presentación y análisis de lo conseguido. Realización del frontend para su puesta en producción.
 
@@ -108,7 +108,7 @@ Presentación y análisis de lo conseguido. Realización del frontend para su pu
 
 Dentro de la carpeta *Resultado*, se deben consultar 3 fuentes:
 
-1- Notebook *XGBoost.ipynb*, en el que se presenta la elección del modelo y el análisis completo de la salida del mismo. 
+1- Notebook *XGBoost.ipynb*, en el que se presenta la elección del modelo y el análisis completo de la salida del mismo. Se consigue un acierto del 70%.
 
 2- Notebook *Comparativa_modelos.ipynb*, que muestra el resumen comparativo de los resultados que se obtuvieron en las diferentes fases de selección.
 
@@ -141,3 +141,25 @@ Se hará un mantenimiento del modelo, realimentándolo con nuevos datos al menos
 
 Por último, además de las referencias nombradas en los propios notebooks, destacar entre la bibliografia:
 *"Hands-On Machine Learning with Scikit-Learn & TensorFlow"*
+
+
+**FE DE ERRATAS**
+
+Se hace constar que en el Trabajo Final de Master "Spread entre mercados en el Mercado Eléctrico español" publicado en este repositorio, se han advertido los siguientes errores:
+
+1.	En la sección **Modelos**, notebook **Modelo_Clasificador_3.ipynb**, en el apartado 2d) Random Forest, debe aparecer *Ejemplo de árboles que lo forman (100)* en vez de *Ejemplo de árboles que lo forman (500)*.
+
+2. En la sección **Modelos**, notebook **Modelo_Clasificador_3.ipynb**, en el apartado 2e) XGBOOST, en la nota final se corrige el nombre de la variable *PRECIO_MDESP* por *PRECIO_MD_ESP*.
+
+3. En la sección **Resultados**, notebook **Comparativa_modelos.ipynb**, en el apartado Resultados, se corrige la línea de código:
+
+*print('SELECCIONADO: %.2f' %precision_score(y_test4,modelo4.predict(X_test4)) + '/n')*
+
+ por 
+ 
+*print('SELECCIONADO: %.2f' %precision_score(y_test4,modelo4.predict(X_test4)) + '\n')*
+
+4. En la sección **Resultados**, notebook **XGBOOST**, en el apartado Análisis probabilidades: predict_proba(), el comentario *Hay un 41% de las veces que me quedo de brazos cruzados y hubiese acertado ¿cuántas veces ocurre esto cuando predict_proba < 65%?* se sustituye por *Hay un 41% de las veces que me quedo de brazos cruzados y hubiese acertado ¿cuántas veces ocurre esto cuando predict_proba < 60%?*
+
+5. En la sección **Resultados**, notebook **XGBOOST**, en la última línea de comentario del documento se añade un asterisco a final de línea para convertir formato de ruta *Resultados/data&model/* a cursiva. 
+
