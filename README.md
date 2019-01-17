@@ -112,7 +112,7 @@ Dentro de la carpeta *Resultado*, se deben consultar 3 fuentes:
 
 2- Notebook *Comparativa_modelos.ipynb*, que muestra el resumen comparativo de los resultados que se obtuvieron en las diferentes fases de selección.
 
-3- Dos dashboard de Tableau (necesario el programa para su visualización):
+3- Dos dashboard de Tableau (necesario el programa para su visualización. Poner la pestaña Dash en modo presentación):
 * *Principales_features.twbx*: visualización de lo más destacable del análisis realizado sobre las features más importantes para el modelo. Dispone de un filtro de rango de fecha para modificar el periodo de visualización en todos los gráficos simultáneamente y obtener mejores conclusiones.
 * *Estadística_resultados.twbx*: visualización de los principales resultados obtenidos.
 
